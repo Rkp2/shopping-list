@@ -12,16 +12,16 @@ function addItem(e) {
     alert("Please add an item");
     return;
   }
+
+  // Create list item
+  const li = document.createElement("li");
+  li.appendChild(document.createTextNode(newItem));
+
+  const button = createButton("remove-item btn-link text-red");
+  li.appendChild(button);
+  itemList.appendChild(li);
+  itemInput.value = "";
 }
-
-// Create list item
-const li = document.createElement("li");
-li.appendChild(document.createTextNode(newItem));
-
-const button = createButton("remove-item btn-link text-red");
-li.appendChild(button);
-itemList.appendChild(li);
-itemInput.value = "";
 
 function createButton(classes) {
   const button = document.createElement("button");
